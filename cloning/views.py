@@ -12,6 +12,14 @@ def home(request):
 
     return render(request, 'home.html', {'restos':home,'lokasi_cari':list_kota})
 
+def detail(request):
+    return render (request, 'detail.html',{})
+
+def search(request):
+    return render (request, 'search_result.html',{})
+
+    
+
 
 def input_resto(request):
     if request.method == "POST":
@@ -42,5 +50,4 @@ def input_foto(request):
             return redirect('home')
     else:
         form_foto = InputFoto()
-
 

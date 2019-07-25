@@ -4,9 +4,9 @@
 # utama
   | - app
   |     | - template
-  |     |       | - basefooter
-  |     |       | - baseheader
-  |     |       | - basecontent
+  |     |       | - base_footer
+  |     |       | - base_header
+  |     |       | - base_content
   |     |       | - home
   |     |       | - detail
   |     |       | - input
@@ -26,3 +26,4 @@
   |
   | - settings.py
   | - urls.py
+

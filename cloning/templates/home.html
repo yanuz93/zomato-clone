@@ -1,0 +1,55 @@
+{% extends 'base_home.html' %}
+
+{%block content%}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 my-4 p-4 border text-center">
+            <div class="row justify-content center">
+                <div class="col-3 py-2 py-2 text-center">
+                    <a href="{% url 'halaman_home' %}"><img class="logo_category" src="https://b.zmtcdn.com/images/search_tokens/app_icons/category_8.png" /></a><br>
+                    <h6>Sarapan</h6>
+                </div>
+                <div class="col-3 py-2 text-center">
+                    <a href="{% url 'halaman_home' %}"><img class="logo_category" src="https://b.zmtcdn.com/images/search_tokens/app_icons/category_9.png" /></a>
+                    <h6>Makan Siang</h6>
+                </div>
+                <div class="col-3 py-2 text-center">
+                    <a href="{% url 'halaman_home' %}"><img class="logo_category" src="https://b.zmtcdn.com/images/search_tokens/app_icons/category_10.png" /></a>
+                    <h6>Makan Malam</h6>
+                </div>
+                <div class="col-3 py-2 text-center">
+                    <a href="{% url 'halaman_home' %}"><img class="logo_category" src="https://b.zmtcdn.com/images/search_tokens/app_icons/category_1.png" /></a>
+                    <h6>Restoran Pesan Antar</h6>
+                </div>
+                <div class="col-3 py-2 text-center">
+                    <a href="{% url 'halaman_home' %}"><img class="logo_category" src="https://b.zmtcdn.com/images/search_tokens/app_icons/category_3.png" /></a>
+                    <h6>Bar dan Nightlife</h6>
+                </div>
+                <div class="col-3 py-2 text-center">
+                    <a href="{% url 'halaman_home' %}"><img class="logo_category" src="https://b.zmtcdn.com/images/search_tokens/app_icons/category_6.png" /></a>
+                    <h6>Kafe dan Deli</h6>
+                </div>
+                <div class="col-3 py-2 text-center">
+                    <a href="{% url 'halaman_home' %}"><img class="logo_category" src="https://b.zmtcdn.com/images/search_tokens/app_icons/special_23.png" /></a>
+                    <h6>Luxuyr Dining</h6>
+                </div>
+                <div class="col-3 py-2 text-center">
+                    <a href="{% url 'halaman_home' %}"><img class="logo_category" src="https://b.zmtcdn.com/images/search_tokens/app_icons/special_10.png" /></a>
+                    <h6>Desserts & Bakes</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8 my-4 p-4 border text-center">
+            <div class="row justify-content-center">
+                <!-- {%for data in list_kota %} -->
+                    <div class="col-3 text-left">
+                        <!-- <span>{{data.kota}}({{data.count}})</span> -->
+                    </div>
+                <!-- {% endfor %} -->
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
