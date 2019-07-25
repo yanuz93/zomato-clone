@@ -22,6 +22,7 @@
 
 .header_home{
     background-image: url("../static/home_bg.jpg");
+    background-size: 100%;
 }
 
 .logo_category{
