@@ -8,9 +8,12 @@ def home(request):
     list_kota = []
     for homes in home:
         if homes.kota not in list_kota:
-            list_kota += homes.kota
+            list_kota += [homes.kota]
 
-    return render(request, 'home.html', {'restos':home,'lokasi_cari':list_kota})
+    return render(request, 'home.html', {'restos':home,'list_kota':list_kota})
+
+def kota(request):
+    return render (request, 'filter_by_place.html',{})
 
 def detail(request):
     return render (request, 'detail.html',{})
