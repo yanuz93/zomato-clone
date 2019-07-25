@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link href="../static/style.css" rel="stylesheet" >
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/bootstrap.min.js" rel="stylesheet"> -->
+    <link href="{% static 'style.css'%}" rel="stylesheet" >
+    <link href="{% static 'bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'bootstrap.min.js'%}" rel="stylesheet">
+    <title>XOMATO</title>
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+                <div class="row justify-content-center header_page">
+                    <div class="col-4 text-left">
+                        <a href="{%url 'halaman_home'%}"><img class="logo_header_page my-3 rounded" src="{% static 'logo-xomato.png' %}" /></a>
+                    </div>
+                    <div class="col-4 text-right">
+                        <form class="form-inline" action="">
+                                <!-- /action_page.php -->
+                            <input class="form-control" type="text" placeholder="Lokasi" aria-label="Lokasi">
+                            <input class="form-control" type="text" placeholder="Cari restoran, daerah, jenis masakan atau nama makanan..." aria-label="Cari restoran, daerah, jenis masakan atau nama makanan...">
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+    </header>
+    {%block content%}
+    {%endblock%}
+    <footer>
+        <div class="container-fluid bg-dark">
+            <div class="row justify-content-center py-3">
+                <div class="col-4 text-left">
+                    <!-- <img class="logo_footer" src="../static/logo-xomato-2.png" /> -->
+                    <a href="{%url 'halaman_home'%}"><img class="logo_footer rounded" src="{% static 'logo-xomato-2.png' %}" /></a>
+                </div>
+                <div class="col-4 text-right align-self-center">
+                    <span class="text-white"><b>Contact Us : </b></span>
+                    <!-- <a href="www.instagram.com"><img class="logo_sosmed m-1" src="../static/logo-ig.png"/></a>
+                    <a href="www.facebook.com"><img class="logo_sosmed m-1" src="../static/logo-fb.png"/></a>
+                    <a href="www.twitter.com"><img class="logo_sosmed m-1" src="../static/logo-tw.png"/></a> -->
+
+                    <a href="www.instagram.com"><img class="logo_sosmed" src="{% static 'logo-ig.png' %}"/></a>
+                    <a href="www.facebook.com"><img class="logo_sosmed" src="{% static 'logo-fb.png' %}"/></a>
+                    <a href="www.twitter.com"><img class="logo_sosmed" src="{% static 'logo-tw.png' %}"/></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
