@@ -4,8 +4,9 @@
 # utama
   | - app
   |     | - template
-  |     |       | - base
-  |     |       | - base2
+  |     |       | - basefooter
+  |     |       | - baseheader
+  |     |       | - basecontent
   |     |       | - home
   |     |       | - detail
   |     |       | - input
