@@ -1,0 +1,30 @@
+.logo_header_page{
+    height: 60px;
+} 
+
+.logo_header_home{
+    height: 150px;
+} 
+
+.logo_footer{
+    width: 60px;
+}
+
+.logo_sosmed{
+    width:30px;
+    margin-left: 15px;
+}
+
+.header_page{
+    background-color: #D84E3F;
+    padding: 
+}
+
+.header_home{
+    background-image: url("../static/home_bg.jpg");
+    background-size: 100%;
+}
+
+.logo_category{
+    width: 50px;
+}
