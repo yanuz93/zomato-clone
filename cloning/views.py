@@ -6,3 +6,6 @@ def home(request):
 
 def detail(request):
     return render (request, 'detail.html',{})
+
+def search(request):
+    return render (request, 'search_result.html',{})
