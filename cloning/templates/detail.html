@@ -4,11 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8 my-4 p-4 border">
-            <img class="w-100 text-center" src="https://b.zmtcdn.com/images/search_tokens/app_icons/category_8.png" />
-            <h3 class="font-weight-bold">{Nama Restoran}</h3>
-            <span class='p-1 h2 bg-success'>{4.5}/5</span>
-            <h6 class="mt-2 text-secondary">{data daerah} - {data category}</h6>
-
+            <img class="w-100 text-center" src="" />
+            <h3 class="font-weight-bold">{{ resto_id.nama }}</h3>
+            <h6 class="mt-2 text-secondary">{{resto_id.masakan}}</h6>
+            <h6 class="mt-2 text-secondary">{{resto_id.kontak}}</h6>
         </div>
         <div class="col-8 mb-4 px-0">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -27,32 +26,28 @@
             </ul>
             <div class="tab-content border p-4" id="myTabContent">
                 <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-                    <h5>Harga</h5>
-                    <h5>Nomor telepon</h5>
-                    <h5>Jam Buka</h5>
-                    <h5>Location</h5>
+                    <h5>Nomor telepon : {{resto_id.kontak}}</h5>
+                    <h5>Jam Buka : {{resto_id.buka_jam}}</h5>
+                    <h5>Jam Tutup : {{resto_id.tutup_jam}}</h5>
+                    <h5>Alamat : {{resto_id.alamat_lengkap}}</h5>
                 </div>
                 <div class="tab-pane fade" id="menu" role="tabpanel" aria-labelledby="menu-tab">
                     <div class="col-12 mb-4">
-                        isi menunya apaaaa
                     </div>
                     <div class="col-12 border">
-                        <form action="{% url 'polls:vote' question.id %}" method="post">
-                            {% csrf_token %}
-                            {% for choice in question.choice_set.all %}
-                                <input type="text" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.nama }}">
-                                <textarea name="choice" rows="5" id="choice{{ forloop.counter }}" value="{{ choice.deskripsi }}"></textarea>
-                                <input type="text" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.harga }}">
-                            {% endfor %}
-                            <input type="submit" value="Submit">
-                        </form>
+                        
                     </div>
                 </div>
                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                    review
+                    {% for review in reviews %}
+                    <h6>{{review.judul}}</h6>
+                    <p>{{review.isi}}</p>
+                    {% endfor %}
                 </div>
                 <div class="tab-pane fade" id="photo" role="tabpanel" aria-labelledby="photo-tab">
-                    photo
+                    {% for foto in fotos %}
+                    <img src="{{foto.pict_url}}" alt="" class="w-50 p-2">
+                    {% endfor %}
                 </div>
             </div>
         </div>

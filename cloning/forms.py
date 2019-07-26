@@ -4,7 +4,7 @@ from django import forms
 class InputResto(forms.ModelForm):
     class Meta:
         model = Restaurant
-        fields = ('nama', 'kota', 'alamat_lengkap', 'masakan', 'rerata_harga', 'kontak', 'buka_jam', 'tutup_jam')
+        fields = ('nama', 'kota', 'alamat_lengkap', 'masakan', 'kontak', 'buka_jam', 'tutup_jam', 'the_choices')
 
 class InputMenu(forms.ModelForm):
     class Meta:

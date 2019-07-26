@@ -1,24 +1,31 @@
 from django.shortcuts import render, redirect, Http404
-from .models import Restaurant, Menu, Review, Photo 
+from .models import Restaurant, Menu, Review, Photo, Kategori
 from .forms import InputReview, InputResto, InputFoto, InputMenu
 from django.db.models import Q
 
 # Create your views here.
 def home(request):
     home = Restaurant.objects.all()
-    list_kota = Restaurant.objects.values('kota').distinct()
-#    list_kota = []
-#    for homes in home:
-#        if homes.kota not in list_kota:
-#            list_kota += [homes.kota]
+    list_kota = []
+    for homes in home:
+        if homes.kota not in list_kota:
+            list_kota += [homes.kota]
     return render(request, 'home.html', {'restos':home,'list_kota':list_kota})
 
-def kota(request):
-    return render (request, 'filter_by_place.html',{})
+def base(request):
+    home = Restaurant.objects.all()
+    list_kota = []
+    for homes in home:
+        if homes.kota not in list_kota:
+            list_kota += [homes.kota]
+    return render(request, 'base_page.html', {'restos':home,'list_kota':list_kota})
 
-def detail(request):
+def kota(request):    
+    return render(request, 'filter_by_place.html',{})
+
+def detail(request, restoid):
     try:
-        resto_id=Restaurant.objects.get(pk=restoid)
+        resto_id = Restaurant.objects.get(pk=restoid)
         menus = Menu.objects.all().filter(rm_id_id=resto_id.id)
         fotos = Photo.objects.all().filter(rm_id_id=resto_id.id)
         reviews = Review.objects.all().filter(rm_id_id=resto_id.id)
@@ -26,7 +33,7 @@ def detail(request):
         raise Http404(f"Restaurant dengan entry nomor {restoid} tidak tersedia.")
     return render(request, 'detail.html', {'resto_id':resto_id,'menus':menus,'fotos':fotos,'reviews':reviews}) 
 
-def search(request):
+def cari(request):
     if request.method=='GET':
         loc = request.GET.get('src_loc')
         qry = request.GET.get('src_qry')
