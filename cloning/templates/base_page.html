@@ -21,23 +21,16 @@
                         <a href="{%url 'home'%}"><img class="logo_header_page my-3 rounded" src="{% static 'logo-xomato.png' %}" /></a>
                     </div>
                     <div class="col-4 pt-4 text-center">
-                            <form class="form-inline mr-auto" action="">
-                                <div class="dropdown">
-                                    <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">Lokasi ...
-                                    <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                                        <li><a href="#">HTML</a></li>
-                                        <li><a href="#">CSS</a></li>
-                                        <li><a href="#">JavaScript</a></li>
-                                        <li><a href="#">jQuery</a></li>
-                                        <li><a href="#">Bootstrap</a></li>
-                                        <li><a href="#">Angular</a></li>
-                                    </ul>
-                                </div>
-                                <input class="form-control mx-1" type="text" placeholder="Cari restoran, daerah, jenis masakan atau nama makanan..." aria-label="Cari restoran, daerah, jenis masakan atau nama makanan...">
-                                <button class="btn btn-light btn-unique btn-rounded my-0 mx-1"" type="submit">Search</button>
-                            </form>
+                        <form class="form-inline mr-auto" method="GET">
+                            <input class="form-control" list="daf_loc" id="myInput" type="text" placeholder="Lokasi..." name="src_loc">
+                            <datalist id="daf_loc">
+                            {%for kota in list_kota %}
+                                <option value="{{kota}}">
+                            {% endfor %}
+                            </datalist>
+                            <input class="form-control mx-1" type="text"  name="src_qry" placeholder="Cari restoran, alamat  atau jenis masakan ..." aria-label="Cari restoran, daerah, jenis masakan atau nama makanan...">
+                            <button class="btn btn-light btn-unique btn-rounded my-0 mx-1" type="submit">Search</button>
+                        </form>
                     </div>
                 </div>
 
