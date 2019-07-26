@@ -14,7 +14,7 @@ def home(request):
     return render(request, 'home.html', {'restos':home,'list_kota':list_kota})
 
 def kota(request):
-    return render (request, 'filter_by_place.html',{})
+    return render(request, 'filter_by_place.html',{})
 
 def detail(request):
     try:
