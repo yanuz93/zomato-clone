@@ -18,7 +18,7 @@
         <div class="container-fluid">
                 <div class="row justify-content-center p-5 header_home">
                     <div class="col-8 text-center ">
-                            <a href="{%url 'home'%}"><img class="logo_header_home rounded" src="{% static 'logo-xomato-2.png' %}" /></a>
+                            <a href="{%url 'home' %}"><img class="logo_header_home rounded" src="{% static 'logo-xomato-2.png' %}" /></a>
                     </div>
                     <div class="col-8 py-3 text-center ">
                         <h3 class="text-white font-weight-bold">Temukan restoran, kafe, dan bar terbaik di Jakarta</h3> 
@@ -34,11 +34,12 @@
                                     {% endfor %}
                                     </datalist>
                                     <input class="form-control mx-1" type="text"  name="src_qry" placeholder="Cari restoran, alamat  atau jenis masakan ..." aria-label="Cari restoran, daerah, jenis masakan atau nama makanan...">
-                                    <button class="btn btn-danger btn-unique btn-rounded my-0 mx-1" type="submit">Search</button>
+                                    <button class="btn btn-danger btn-unique btn-rounded my-0 mx-1" type="submit" href="{% url 'halaman_search' %}">Search</button>
                                 </form>
                             </div>
                         </div>
                     </div>
+                </div>
         </div>
     </header>
     {%block content%}
@@ -47,11 +48,10 @@
         <div class="container-fluid bg-dark">
             <div class="row justify-content-center py-3">
                 <div class="col-4 text-left">
-                    <a href="{%url 'home'%}"><img class="logo_footer rounded" src="{% static 'logo-xomato-2.png' %}" /></a>
+                    <a href="{%url 'home' %}"><img class="logo_footer rounded" src="{% static 'logo-xomato-2.png' %}" /></a>
                 </div>
                 <div class="col-4 text-right align-self-center">
                     <span class="text-white"><b>Contact Us : </b></span>
-
                     <a href="www.instagram.com"><img class="logo_sosmed" src="{% static 'logo-ig.png' %}"/></a>
                     <a href="www.facebook.com"><img class="logo_sosmed" src="{% static 'logo-fb.png' %}"/></a>
                     <a href="www.twitter.com"><img class="logo_sosmed" src="{% static 'logo-tw.png' %}"/></a>
