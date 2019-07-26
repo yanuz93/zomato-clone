@@ -3,7 +3,7 @@ from .models import Restaurant, Review, Photo, Menu
 # Register your models here.
 @admin.register(Restaurant)
 class AuthorResto(admin.ModelAdmin):
-    list_display = ('id', 'nama', 'kota', 'alamat_lengkap', 'masakan', 'rerata_harga', 'kontak', 'buka_jam', 'tutup_jam')
+    list_display = ('id', 'nama', 'kota', 'alamat_lengkap', 'masakan', 'kontak', 'buka_jam', 'tutup_jam')
     list_display_links = ('id', 'nama', 'kota')
 
 @admin.register(Menu)
