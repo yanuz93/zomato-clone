@@ -26,22 +26,15 @@
                     <div class="col-8 text-center ">
                         <div class="row justify-content-center">
                             <div class="col-5 text-center">
-                                <form class="form-inline mr-auto" action="">
-                                    <div class="dropdown">
-                                        <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">Lokasi ...
-                                        <span class="caret"></span></button>
-                                        <ul class="dropdown-menu">
-                                            <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                                            <li><a href="#">HTML</a></li>
-                                            <li><a href="#">CSS</a></li>
-                                            <li><a href="#">JavaScript</a></li>
-                                            <li><a href="#">jQuery</a></li>
-                                            <li><a href="#">Bootstrap</a></li>
-                                            <li><a href="#">Angular</a></li>
-                                        </ul>
-                                    </div>
-                                    <input class="form-control mx-1" type="text" placeholder="Cari restoran, daerah, jenis masakan atau nama makanan..." aria-label="Cari restoran, daerah, jenis masakan atau nama makanan...">
-                                    <button class="btn btn-danger btn-unique btn-rounded my-0 mx-1"" type="submit">Search</button>
+                                <form class="form-inline mr-auto" method="GET">
+                                    <input class="form-control" list="daf_loc" id="myInput" type="text" placeholder="Lokasi..." name="src_loc">
+                                    <datalist id="daf_loc">
+                                    {%for kota in list_kota %}
+                                        <option value="{{kota}}">
+                                    {% endfor %}
+                                    </datalist>
+                                    <input class="form-control mx-1" type="text"  name="src_qry" placeholder="Cari restoran, alamat  atau jenis masakan ..." aria-label="Cari restoran, daerah, jenis masakan atau nama makanan...">
+                                    <button class="btn btn-danger btn-unique btn-rounded my-0 mx-1" type="submit">Search</button>
                                 </form>
                             </div>
                         </div>
